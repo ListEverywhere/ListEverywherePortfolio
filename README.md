@@ -80,3 +80,21 @@ Amazon Web Services (AWS) was used for hosting the backend Spring Boot applicati
 ## DevOps Principles
 The backend application contains a tracer log that outputs trace logs to the console each time a method is executed. The tracer utilizes the Spring Starter AOP dependency. When a method is executed, such as accessing the user's shopping lists endpoint, each method is intercepted by the tracer. The application then logs the start time, execution time, and end time for each method that is executed. The administrator can view the application logs on the local terminal or in AWS to inspect method execution.
 
+## New Technologies
+Several new technologies were learned during the development of this project. This section will describe these technologies and why they were chosen.
+
+**Flutter + Dart**
+The Flutter framework is a cross-platform development kit written for the Dart language. It is a fairly new framework developed by Google. This framework was chosen for ListEverywhere as it would provide a frontend application that supports mobile, desktop, and web without having to rewrite the application for multiple platforms. The framework also contains a large library of pre-made widgets, including widgets that follow the Material design which was utilized in the project. This technology was chosen over alternatives, such as React Native, as the Dart language has closer resemblance to Java and C# over JavaScript and Flutter supports the web platform.
+
+At the start of the project, the "Complete Flutter Development Bootcamp with Dart" course was purchased so that the language could be learned prior to developing the ListEverywhere application. This provided the foundations that were needed to successfully build the final release of the application.
+
+**FatSecret Platform API**
+This third party API was used for getting the item names for shopping list items and recipe items. This API was chosen as it provides a large list of food products, removing the need to create a local database table of product names. Additionally, the API has a search method for items that can find exact matches or alternatives to the search query. Another reason for using this API is for the recipe match, as the recipe match can use item IDs instead of having to compare text which can introduce complex logic.
+
+**Spring Security OAuth2 Client**
+This package provided an implementation for consuming an OAuth 2 protected service in a Spring Boot application. This was required for interfacing with the FatSecret Platform API to get the item names.
+
+## Technical Approach
+Several design diagrams were drafted prior to the development of ListEverywhere. These diagrams outline the approaches taken to building, configuring, and implementing the application and various features.
+
+
