@@ -97,4 +97,41 @@ This package provided an implementation for consuming an OAuth 2 protected servi
 ## Technical Approach
 Several design diagrams were drafted prior to the development of ListEverywhere. These diagrams outline the approaches taken to building, configuring, and implementing the application and various features.
 
+Several of these diagrams can be viewed directly by navigating to the [ListEverywhereDesign Repository](https://github.com/ListEverywhere/ListEverywhereDesign) that is located in the GitHub organization.
+
+**UML Diagram**
+The following diagram outlines the UML Classes for the Spring Boot backend application. All the Controllers, Models, and Services required for the backend are detailed in the diagram. A key is provided to detail which layer each class is built for. This document provided the structure of how the backend application was designed and showcases the N-layer architecture.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/UML%20Diagram.png)
+
+**Database ER Diagram**
+The following diagram outlines the table structure required to store the data for ListEverywhere in the MySQL database. Fields with a key icon represent the primary key for each table. Fields with a red icon represent a foreign key relationship with another table. The ER diagram was built using the Reverse Engineer tool in MySQL Workbench.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Database%20ER%20Diagram.png)
+
+**Logical Solution Diagram**
+The following diagrams outline the software architecture that will be used by ListEverywhere. This section consists of two diagrams: Software Overview and Widget Design.
+
+Software Overview
+
+This diagram breaks down the architecture for the backend and frontend applications for ListEverywhere. The backend contains the Spring Boot application, which follows an N-layer architecture design, as well as a MySQL database connected locally. A detailed breakdown of the Spring Boot application classes is provided in this document under the  UML Diagrams  section. The backend has one integration for the third-party API platform. The frontend contains the Flutter application, in which it follows a similar structure to the N-layer architecture design. The second diagram displays a visual mockup for the Widgets section.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Software%20Overview.png)
+
+Widget Design
+
+This diagram utilizes the application wireframes to represent a visual mockup of the custom UI Widgets that will be designed for ListEverywhere’s Flutter application. All the sections highlighted in color represent a custom widget. UI elements that are not highlighted represent widgets that are provided by Flutter and the Material library.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Widget%20Design.png)
+
+**Physical Solution Diagram**
+The following diagram outlines the physical and cloud infrastructure that will be used to run ListEverywhere. The backend of the application will be hosted on AWS, in which each service and its specification are written for each AWS service. Additionally, the application MySQL database will be hosted on AWS and will connect locally to the backend in AWS. The backend will integrate with one third-party service that is not managed by ListEverywhere. This includes the FatSecret Platform (getting item information). The client tier will interact with the backend over HTTP and JWT token authentication. The mobile and web clients will both integrate with the backend hosted in AWS. The mobile client will run as a native application while the web client will require a local web server to operate.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Physical%20Solution%20Diagram.png)
+
+**Service API Design**
+The ListEverywhere API was designed prior to building the backend application. This was completed using Stoplight, in which the design can be accessed by clicking the link below:
+
+[ListEverywhere API Design](https://gcep-451.stoplight.io/docs/listeverywhere/phakw9myo5b19-list-everywhere-api)
+
+**Sitemap**
+The following diagram represents the user flow on the frontend application. This details the paths that the user can take when navigating the frontend of the application. The user will be able to navigate to pages through a navigation bar and exit pages using a back button.
+![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Sitemap.png)
+
+
 
