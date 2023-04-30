@@ -137,5 +137,75 @@ The ListEverywhere API was designed prior to building the backend application. T
 The following diagram represents the user flow on the frontend application. This details the paths that the user can take when navigating the frontend of the application. The user will be able to navigate to pages through a navigation bar and exit pages using a back button.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Sitemap.png)
 
+## Risks and Challenges
+Several risks and challenges were idenfitied prior to and during development of ListEverywhere. These risks were determined by analyzing the technologies included in the design and factoring in the potential issues that could arise.
 
+**1. Developing a Flutter Application**
 
+**The risk** - Having to learn the Flutter framework and successfully create simple applications using it
+
+**Why?** -  This technology was researched at the beginning of the project. There were no prior experiences with using and building applications in Flutter. This would make it uncertain if a Flutter application could be successfully developed by the end of the project.
+
+**Mitigation Plan**
+
+1. Research the Flutter framework and figure out if it is applicable.
+2. Setup the Flutter environments and ensure all the necessary tools are working
+3. Create a simple application and get it to run on a mobile device
+4. Create a simple backend for the Flutter app to interact with
+5. Research how to connect the backend to the Flutter application
+6. If successful, decide to use the framework or not by October 30, 2022.
+
+**Resolution** - A Flutter course was purchased that provided several lessons about writing Dart and Flutter code. This provided enough of an understanding of the framework to where the ListEverywhere application could be successfully completed. The course can be found here: [The Complete 2021 Flutter Development Bootcamp with Dart](https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart)
+
+**2. Cloud Hosting**
+
+**The risk** - The resources and cost of using a cloud platform will need to be considered for future stages of the application
+
+**Why?** - The backend will need to be hosted to access the API from a mobile or desktop device. This is resolved by cloud hosting, however the resource usage and cost will need to be monitored. While there is a small budget allocated for the project, it is preferred that cloud costs are kept to a minimum.
+
+**Mitigation Plan**
+
+1. Research which cloud providers will host the application and the technologies it uses. (The cloud hosting platform at this time will be AWS)
+2. Run a simple application on the cloud and test out the available resources
+3. Test out hosting the application during the first code milestone
+4. Have several people test out the application and monitor cloud resources
+
+**Resolution** - A simple testing API application was created and deployed to AWS, choosing the minimal resources required for the application. Once this was verified to be working, the API would be later deployed to the cloud once significant progress was made on it. Additionally, an alert was created that will send an email notification if the monthly costs are over a set amount.
+
+**3. Third-Party API**
+
+**The risk** - The FatSecret API contains a limit of 5000 API calls per day for free plans. This may be an issue if the application continuously calls for product information from the API.
+
+**Why?** - The application must make several API calls to get item information for shopping lists and recipes, as only item ID numbers are stored in the application. During testing and development, the limit was not an issue as it was mainly a single session. However, if multiple users were to use the application at the same time, the application may run out of API calls and temporarily lose access to item names.
+
+**Mitigation Plan**
+
+1. Research the API and the terms and conditions.
+2. Identify what the API offers and what data is given.
+3. Test out the API by implementing it in an application, either a simple project or an early version of the main project, and measure how many API calls will be required.
+4. If the free plan is not sufficient, consider what paid plans are offered by the service.
+5. If a solution cannot be resolved, consider a new API or creating a local database of products.
+
+**Resolution** - The API calls limit was not an issue during testing of the application, and some views were modified to reduce unnecessary API calls. This can be seen in some of the controller methods in the backend application where a noItems parameter is available. Towards the end of the project, FatSecret Platform was contacted and granted access to the Premier Free tier as the project was eligible for it. This provides more access to the API without call limits.
+
+## Issues
+While the final release candidate for ListEverywhere is feature complete per the requirement specifications, there are several documented issues that must be addressed in the future. If additional bugs are found by users, an issue can be created on the appropriate repository in the ListEverywhere GitHub organization.
+
+**Bugs/Known Issues**
+
+ - When updating a user in the API, the constraints are not checked
+ - When opening a list, the list name does not show until the user performs an update
+ - Match Recipes with List Items endpoint displays an incorrect error message if the recipe does not exist
+ - No animation when item is moved to bottom of the list after being checked
+ - Navigation bar shows buggy animation when switching tabs
+
+**Limitations**
+
+ - Page state is not retained when switching to other tabs. Resolving this issue is a higher priority, but it will require a rewrite of certain areas of the application.
+ - The mobile builds of ListEverywhere are not available in any app stores due to the potential costs of Cloud hosting, licenses, and API plans.
+ - Items may have duplicate entries in the third party API (same names, different IDs) which may create difficulty when trying to match with recipes
+ - Response time when accessing endpoints is slow, averaging at around two seconds for certain endpoints. This may be fixed by allocating more resources to the application and optimizing API calls
+ - No images for recipes or items
+ - Recipe steps and items cannot be moved to a different position
+ - Users can only modify account information through the API
+ - Lists cannot be sorted
