@@ -105,6 +105,7 @@ The following diagram outlines the UML Classes for the Spring Boot backend appli
 **Database ER Diagram**
 
 The following diagram outlines the table structure required to store the data for ListEverywhere in the MySQL database. Fields with a key icon represent the primary key for each table. Fields with a red icon represent a foreign key relationship with another table. The ER diagram was built using the Reverse Engineer tool in MySQL Workbench.
+
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Database%20ER%20Diagram.png)
 
 **Logical Solution Diagram**
