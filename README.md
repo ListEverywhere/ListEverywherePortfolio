@@ -95,9 +95,7 @@ This third party API was used for getting the item names for shopping list items
 This package provided an implementation for consuming an OAuth 2 protected service in a Spring Boot application. This was required for interfacing with the FatSecret Platform API to get the item names.
 
 ## Technical Approach
-Several design diagrams were drafted prior to the development of ListEverywhere. These diagrams outline the approaches taken to building, configuring, and implementing the application and various features.
-
-Several of these diagrams can be viewed directly by navigating to the [ListEverywhereDesign Repository](https://github.com/ListEverywhere/ListEverywhereDesign) that is located in the GitHub organization.
+Several design diagrams were drafted prior to the development of ListEverywhere. These diagrams outline the approaches taken to building, configuring, and implementing the application and various features. Several of these diagrams can be viewed directly by navigating to the [ListEverywhereDesign Repository](https://github.com/ListEverywhere/ListEverywhereDesign) that is located in the GitHub organization.
 
 **UML Diagram**
 The following diagram outlines the UML Classes for the Spring Boot backend application. All the Controllers, Models, and Services required for the backend are detailed in the diagram. A key is provided to detail which layer each class is built for. This document provided the structure of how the backend application was designed and showcases the N-layer architecture.
@@ -132,6 +130,7 @@ The ListEverywhere API was designed prior to building the backend application. T
 **Sitemap**
 The following diagram represents the user flow on the frontend application. This details the paths that the user can take when navigating the frontend of the application. The user will be able to navigate to pages through a navigation bar and exit pages using a back button.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Sitemap.png)
+
 
 
 
