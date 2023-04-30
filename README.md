@@ -6,6 +6,7 @@ ListEverywhere is a digital shopping list and recipe sharing application that al
 ListEverywhere provides a unique feature to enhance the shopping experience of users: recipe integration within lists. Users can find recipes that include ingredients from their list and integrate it into their list. Users will always know what to purchase as ingredients from their list and the recipe automatically merge. This simplifies the process of creating a meal plan, as this application can prepare the list at home or at the store. If users are unable to find a specific recipe, they can create their own recipes inside of the application. Additionally, they can publish this recipe so that other users can incorporate it into their own shopping lists.
 
 **The Problem and Solution**
+
 Current methods for writing shopping lists include paper shopping lists or notes application on a mobile device. One major issue with these methods is that users can forget the lists at home or lose them, either through losing the paper or the device. ListEverywhere solves this issue by storing the user's shopping lists online rather than tying the list to a single location. As long as the user knows their username and password and has an internet connection, their lists are always available at home or in the store. 
 
 ListEverywhere also solves another potential issue that shoppers may encounter: figuring out meal plans. ListEverywhere provides a unique recipe match feature that allows users to find recipes containing items that are already in their shopping list. When the user finds an interesting recipe, the application can automatically merge the recipe items with the user's shopping list, simplifying meal plans.
@@ -84,14 +85,17 @@ The backend application contains a tracer log that outputs trace logs to the con
 Several new technologies were learned during the development of this project. This section will describe these technologies and why they were chosen.
 
 **Flutter + Dart**
+
 The Flutter framework is a cross-platform development kit written for the Dart language. It is a fairly new framework developed by Google. This framework was chosen for ListEverywhere as it would provide a frontend application that supports mobile, desktop, and web without having to rewrite the application for multiple platforms. The framework also contains a large library of pre-made widgets, including widgets that follow the Material design which was utilized in the project. This technology was chosen over alternatives, such as React Native, as the Dart language has closer resemblance to Java and C# over JavaScript and Flutter supports the web platform.
 
 At the start of the project, the "Complete Flutter Development Bootcamp with Dart" course was purchased so that the language could be learned prior to developing the ListEverywhere application. This provided the foundations that were needed to successfully build the final release of the application.
 
 **FatSecret Platform API**
+
 This third party API was used for getting the item names for shopping list items and recipe items. This API was chosen as it provides a large list of food products, removing the need to create a local database table of product names. Additionally, the API has a search method for items that can find exact matches or alternatives to the search query. Another reason for using this API is for the recipe match, as the recipe match can use item IDs instead of having to compare text which can introduce complex logic.
 
 **Spring Security OAuth2 Client**
+
 This package provided an implementation for consuming an OAuth 2 protected service in a Spring Boot application. This was required for interfacing with the FatSecret Platform API to get the item names.
 
 ## Technical Approach
@@ -113,10 +117,12 @@ The following diagram outlines the table structure required to store the data fo
 The following diagrams outline the software architecture that will be used by ListEverywhere. This section consists of two diagrams: Software Overview and Widget Design.
 
 **Software Overview**
+
 This diagram breaks down the architecture for the backend and frontend applications for ListEverywhere. The backend contains the Spring Boot application, which follows an N-layer architecture design, as well as a MySQL database connected locally. A detailed breakdown of the Spring Boot application classes is provided in this document under the  UML Diagrams  section. The backend has one integration for the third-party API platform. The frontend contains the Flutter application, in which it follows a similar structure to the N-layer architecture design. The second diagram displays a visual mockup for the Widgets section.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Software%20Overview.png)
 
 **Widget Design**
+
 This diagram utilizes the application wireframes to represent a visual mockup of the custom UI Widgets that will be designed for ListEverywhere’s Flutter application. All the sections highlighted in color represent a custom widget. UI elements that are not highlighted represent widgets that are provided by Flutter and the Material library.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Widget%20Design.png)
 
