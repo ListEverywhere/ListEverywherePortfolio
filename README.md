@@ -111,13 +111,11 @@ The following diagram outlines the table structure required to store the data fo
 
 The following diagrams outline the software architecture that will be used by ListEverywhere. This section consists of two diagrams: Software Overview and Widget Design.
 
-Software Overview
-
+**Software Overview**
 This diagram breaks down the architecture for the backend and frontend applications for ListEverywhere. The backend contains the Spring Boot application, which follows an N-layer architecture design, as well as a MySQL database connected locally. A detailed breakdown of the Spring Boot application classes is provided in this document under the  UML Diagrams  section. The backend has one integration for the third-party API platform. The frontend contains the Flutter application, in which it follows a similar structure to the N-layer architecture design. The second diagram displays a visual mockup for the Widgets section.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Software%20Overview.png)
 
-Widget Design
-
+**Widget Design**
 This diagram utilizes the application wireframes to represent a visual mockup of the custom UI Widgets that will be designed for ListEverywhere’s Flutter application. All the sections highlighted in color represent a custom widget. UI elements that are not highlighted represent widgets that are provided by Flutter and the Material library.
 ![enter image description here](https://raw.githubusercontent.com/ListEverywhere/ListEverywhereDesign/main/Logical%20Diagram%20Widget%20Design.png)
 
